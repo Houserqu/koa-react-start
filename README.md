@@ -1,6 +1,7 @@
 # koa-react-satrt
 
-基于 koa 和 react 的脚手架
+基于 Koa+Typescript 和 React 的脚手架, 适用与快速开始全栈项目开发。
+大型项目需要自己进一步封装，也可以直接使用 nestjs、egg 等开发框架。针对 nestjs 的我也创建了起步项目，集成了常用功能，[请移步](https://github.com/Houserqu/nestjs-start)。
 
 ### 特点
 
