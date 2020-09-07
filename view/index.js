@@ -4,7 +4,6 @@ import 'typeface-roboto';
 import { renderRoutes } from 'react-router-config';
 import routes from './routes';
 import { HashRouter } from 'react-router-dom';
-import { CssBaseline } from '@material-ui/core';
 import dva from 'dva';
 import count from './model/count';
 
@@ -14,10 +13,9 @@ app.model(count);
 const App = function () {
   return (
     <div className="App">
-      <CssBaseline />
-        <HashRouter>
-          {renderRoutes(routes)}
-        </HashRouter>
+      <HashRouter>
+        {renderRoutes(routes)}
+      </HashRouter>
     </div>
   );
 };

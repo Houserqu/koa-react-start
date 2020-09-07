@@ -10,7 +10,6 @@
 - [React](https://zh-hans.reactjs.org/) 流行的单页开发库
 - [Dva](https://dvajs.com/guide/) 对 redux 的封装，写起来更加方便
 - [react-router-config](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config) 基于 react-router 的配置式路由
-- [Material](https://material-ui.com/zh/) 谷歌出品的 UI 库
 - [styled-components](https://styled-components.com/) 在 js 中写 css 的库
 - [pm2](https://pm2.keymetrics.io/) 生产环境默认 pm2 启动
 - [eslint](https://cn.eslint.org/) 代码风格检查

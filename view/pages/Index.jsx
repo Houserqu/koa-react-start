@@ -2,7 +2,6 @@ import React from 'react';
 import ajax from '@utils/ajax';
 import { connect } from 'dva';
 import { store } from '../index';
-import { Button } from '@material-ui/core';
 
 class TobExchange extends React.Component {
   state = {};
@@ -15,7 +14,7 @@ class TobExchange extends React.Component {
       param: this.state.form,
       url: '/api/index',
       success: (res) => {
-        alert(JSON.stringify(res))
+        alert(JSON.stringify(res));
       },
     });
   };
@@ -26,17 +25,17 @@ class TobExchange extends React.Component {
       <div>
         <div>
           dva data: {count}
-          <Button
+          <button
             onClick={() => {
               dispatch({ type: 'count/add' });
             }}
           > 增加
-          </Button>
+          </button>
 
-          <Button
+          <button
             onClick={this.submit}
           > ajax
-          </Button>
+          </button>
         </div>
       </div>
     );
