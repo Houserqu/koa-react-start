@@ -75,7 +75,6 @@ module.exports = {
     },
   },
   plugins: [
-    // new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './src/view/index.html',
     }),
