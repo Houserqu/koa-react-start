@@ -1,6 +1,6 @@
-export function serializeParam(param: object, encode = false): string {
+export function serializeParam(param: any, encode = false): string {
   if (!param) return '';
-  const qstr = [];
+  const qstr:string[] = [];
   Object.keys(param).forEach((key) => {
     if (typeof param[key] !== 'undefined' || param[key] !== null) {
       qstr.push(`${key}=${encode ? encodeURIComponent(param[key]) : param[key]}`);

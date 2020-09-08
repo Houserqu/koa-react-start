@@ -2,6 +2,7 @@ import React from 'react';
 import ajax from '@/utils/ajax';
 import { connect } from 'dva';
 import { Dispatch } from '../../../node_modules/redux'
+import { State as CountState } from '@/view/model/count'
 
 interface State {
   form: any,
@@ -10,7 +11,7 @@ interface State {
 
 interface Props {
   dispatch: Dispatch<{type: string, payload?: any}>,
-  count: number
+  count: CountState
 }
 
 class TobExchange extends React.Component<Props, State> {
@@ -26,7 +27,7 @@ class TobExchange extends React.Component<Props, State> {
       method: 'GET',
       param: this.state.form,
       url: '/api/index',
-      success: (res) => {
+      success: (res: any) => {
         alert(JSON.stringify(res));
       },
     });
@@ -37,14 +38,19 @@ class TobExchange extends React.Component<Props, State> {
     return (
       <div>
         <div>
-          dva data: {count}
+          dva data: {count.count}
           <button
             onClick={() => {
               dispatch({ type: 'count/add' });
             }}
           > 增加
           </button>
-
+          <button
+            onClick={() => {
+              dispatch({ type: 'count/minus' });
+            }}
+          > 减少
+          </button>
           <button
             onClick={this.submit}
           > ajax
@@ -55,4 +61,4 @@ class TobExchange extends React.Component<Props, State> {
   }
 }
 
-export default connect(({ count }) => ({ count }))(TobExchange);
+export default connect(({ count }: any) => ({ count }))(TobExchange);

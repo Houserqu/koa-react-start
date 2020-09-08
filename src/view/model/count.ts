@@ -1,12 +1,20 @@
+export interface State {
+  count: number
+}
+
+const initState: State = {
+  count: 0
+}
+
 export default {
   namespace: 'count',
-  state: 11,
+  state: initState,
   reducers: {
-    add(count: number): number {
-      return count + 1;
+    add(state: State): State{
+      return { ...state, count: ++state.count };
     },
-    minus(count: number): number {
-      return count - 1;
+    minus(state: State): State {
+      return { ...state, count: --state.count };
     },
   },
 };
