@@ -17,7 +17,6 @@ module.exports = merge(commmon, {
   devServer: {
     contentBase: dist,
     compress: true,
-    port: 8080,
   },
   plugins: [
     new HtmlWebpackPlugin({
