@@ -1,4 +1,4 @@
-export function serializeParam(param, encode) {
+export function serializeParam(param: object, encode = false): string {
   if (!param) return '';
   const qstr = [];
   Object.keys(param).forEach((key) => {
@@ -9,7 +9,18 @@ export function serializeParam(param, encode) {
   return qstr.join('&');
 }
 
-export default function ajax(option) {
+interface AjaxOption {
+  method: 'POST' | string
+  url: string
+  param?: object
+  success?: Function
+  error?: Function
+  complete?: Function
+  timeout?: number
+  onTimeout?: Function
+}
+
+export default function ajax(option: AjaxOption) {
   const o = option;
   const m = o.method.toLocaleUpperCase();
   const isPost = 'POST' === m;

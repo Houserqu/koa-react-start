@@ -15,4 +15,7 @@ app.use(statics(path.join(__dirname, staticPath)));
 app.use(router.routes()).use(router.allowedMethods());
 
 // 启动服务
-app.listen(8010, process.env.NODE_ENV === 'production' ? '' : '');
+const port = 8010
+app.listen(port, process.env.NODE_ENV === 'production' ? '' : '', () => {
+  console.log(`erver is running at port ${port}`)
+});

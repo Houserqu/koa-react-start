@@ -1,7 +1,7 @@
-const crypto = require('crypto');
+import crypto from 'crypto';
 
 // 参数签名
-function sign(params, signKey, privateKey) {
+function sign(params: object, signKey: string, privateKey): string {
   const keys = Object.keys(params).sort();
   const signStr = keys
     .map(key => `${key.toString()}=${params[key].toString()}`)
