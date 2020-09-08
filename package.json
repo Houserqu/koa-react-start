@@ -43,6 +43,7 @@
     "@types/koa-router": "^7.4.1",
     "@types/koa-static": "^4.0.1",
     "@types/koa2-cors": "^2.0.1",
+    "@types/react-router-config": "^5.0.1",
     "@typescript-eslint/parser": "^4.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-import": "^1.13.0",
