@@ -9,16 +9,15 @@
     "experimentalDecorators": true,
     "allowJs": true, // 是否允许出现js
     "newLine": "LF",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "jsx": "react",
     "lib": [
       "DOM"
     ],
     "paths": {
-      "@server/*": ["server/*"],
-      "@utils/*": ["utils/*"],
-      "@config/*": ["config/*"],
+      "@": ["src"],
+      "@/*": ["src/*"],
     }
   },
-  "include": ["server/**/*", "utils/**/*"]
+  "include": ["src/**/*"]
 }

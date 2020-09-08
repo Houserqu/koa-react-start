@@ -22,10 +22,10 @@ module.exports = merge(commmon, {
   plugins: [
     new HtmlWebpackPlugin({
       filename: './index.html',
-      template: 'view/index.html',
+      template: 'src/view/index.html',
     }),
     new CopyPlugin([
-      { from: 'view/public', to: './' },
+      { from: 'src/view/public', to: './' },
     ]),
     new WriteFilePlugin(),
   ],

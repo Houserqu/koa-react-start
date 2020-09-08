@@ -1,7 +1,7 @@
 {
   "apps": [{
     "name": "koa-react-start",
-    "script": "./dist/server.js",
+    "script": "./dist/server/server.js",
     "env_production" : {
       "NODE_ENV": "production"
     },

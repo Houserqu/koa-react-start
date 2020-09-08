@@ -1,7 +1,7 @@
 import React from 'react';
-import ajax from '@utils/ajax';
+import ajax from '@/utils/ajax';
 import { connect } from 'dva';
-import { Dispatch } from '../../node_modules/redux'
+import { Dispatch } from '../../../node_modules/redux'
 
 interface State {
   form: any,

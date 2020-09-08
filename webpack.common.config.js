@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    index: './view/index.tsx',
+    index: './src/view/index.tsx',
   },
   module: {
     rules: [
@@ -23,7 +23,7 @@ module.exports = {
           loader: 'url-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'images/',
+            outputPath: 'public/images/',
             limit: 8192,
           },
         },
@@ -50,10 +50,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
     alias: {
-      '@view': path.resolve('view'),
-      '@utils': path.resolve('utils'),
-      '@model': path.resolve('view', 'model'),
-      '@pages': path.resolve('view', 'pages'),
+      '@': path.resolve(__dirname, 'src'),
     },
   },
   optimization: {
@@ -80,7 +77,7 @@ module.exports = {
   plugins: [
     // new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './view/index.html',
+      template: './src/view/index.html',
     }),
   ],
 };
