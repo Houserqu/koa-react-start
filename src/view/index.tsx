@@ -12,9 +12,7 @@ app.model(count);
 const App = function () {
   return (
     <div className="App">
-      <HashRouter>
-        {renderRoutes(routes)}
-      </HashRouter>
+      <HashRouter>{renderRoutes(routes)}</HashRouter>
     </div>
   );
 };

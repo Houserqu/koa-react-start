@@ -1,26 +1,32 @@
 export function serializeParam(param: any, encode = false): string {
   if (!param) return '';
-  const qstr:string[] = [];
+  const qstr: string[] = [];
   Object.keys(param).forEach((key) => {
     if (typeof param[key] !== 'undefined' || param[key] !== null) {
-      qstr.push(`${key}=${encode ? encodeURIComponent(param[key]) : param[key]}`);
+      qstr.push(
+        `${key}=${encode ? encodeURIComponent(param[key]) : param[key]}`
+      );
     }
   });
   return qstr.join('&');
 }
 
-interface AjaxOption {
-  method: 'POST' | string
-  url: string
-  param?: object
-  success?: Function
-  error?: Function
-  complete?: Function
-  timeout?: number
-  onTimeout?: Function
+interface XhrFun {
+  (xhr: XMLHttpRequest): void;
 }
 
-export default function ajax(option: AjaxOption) {
+export interface AjaxOption {
+  method: 'POST' | string;
+  url: string;
+  param?: any;
+  timeout?: number;
+  success?: XhrFun;
+  error?: XhrFun;
+  complete?: XhrFun;
+  onTimeout?: XhrFun;
+}
+
+export default function ajax(option: AjaxOption): XMLHttpRequest {
   const o = option;
   const m = o.method.toLocaleUpperCase();
   const isPost = 'POST' === m;
@@ -33,7 +39,8 @@ export default function ajax(option: AjaxOption) {
   qstr && !isPost && (o.url += (o.url.indexOf('?') > -1 ? '&' : '?') + qstr);
 
   xhr.open(m, o.url, true);
-  isPost && xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  isPost &&
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
   xhr.onload = function () {
     const { status } = xhr;
@@ -67,7 +74,7 @@ export default function ajax(option: AjaxOption) {
     };
   }
 
-  xhr.send(isPost ? qstr : void (0));
+  xhr.send(isPost ? qstr : void 0);
 
   return xhr;
 }

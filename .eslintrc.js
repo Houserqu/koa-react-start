@@ -6,5 +6,4 @@ module.exports = {
     browser: true,
     node: true,
   },
-  ignorePattern: "webpack.*.config.js",
 };

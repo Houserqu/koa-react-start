@@ -6,9 +6,7 @@ import styled from 'styled-components';
 const App = connect(({ count }) => ({ count }))(({ route }) => (
   <Container>
     <h1>Koa-React-Start</h1>
-    <div className='main'>
-      {renderRoutes(route.routes)}
-    </div>
+    <div className="main">{renderRoutes(route.routes)}</div>
   </Container>
 ));
 
@@ -16,6 +14,5 @@ export default App;
 
 const Container = styled.div`
   .main {
-    
   }
 `;

@@ -1,23 +1,23 @@
 import React from 'react';
 import ajax from '@/utils/ajax';
 import { connect } from 'dva';
-import { Dispatch } from '../../../node_modules/redux'
-import { State as CountState } from '@/view/model/count'
+import { Dispatch } from '../../../node_modules/redux';
+import { State as CountState } from '@/view/model/count';
 
 interface State {
-  form: any,
-  loading: boolean
+  form: any;
+  loading: boolean;
 }
 
 interface Props {
-  dispatch: Dispatch<{type: string, payload?: any}>,
-  count: CountState
+  dispatch: Dispatch<{ type: string; payload?: any }>;
+  count: CountState;
 }
 
 class TobExchange extends React.Component<Props, State> {
   state = {
     form: {},
-    loading: false
+    loading: false,
   };
 
   submit = () => {
@@ -34,7 +34,7 @@ class TobExchange extends React.Component<Props, State> {
   };
 
   render() {
-    const {count, dispatch} = this.props;
+    const { count, dispatch } = this.props;
     return (
       <div>
         <div>
@@ -43,18 +43,17 @@ class TobExchange extends React.Component<Props, State> {
             onClick={() => {
               dispatch({ type: 'count/add' });
             }}
-          > 增加
+          >
+            增加
           </button>
           <button
             onClick={() => {
               dispatch({ type: 'count/minus' });
             }}
-          > 减少
+          >
+            减少
           </button>
-          <button
-            onClick={this.submit}
-          > ajax
-          </button>
+          <button onClick={this.submit}> ajax</button>
         </div>
       </div>
     );
