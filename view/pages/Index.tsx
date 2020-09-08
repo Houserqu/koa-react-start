@@ -1,10 +1,23 @@
 import React from 'react';
 import ajax from '@utils/ajax';
 import { connect } from 'dva';
-import { store } from '../index';
+import { Dispatch } from '../../node_modules/redux'
 
-class TobExchange extends React.Component {
-  state = {};
+interface State {
+  form: any,
+  loading: boolean
+}
+
+interface Props {
+  dispatch: Dispatch<{type: string, payload?: any}>,
+  count: number
+}
+
+class TobExchange extends React.Component<Props, State> {
+  state = {
+    form: {},
+    loading: false
+  };
 
   submit = () => {
     this.setState({ loading: true });

@@ -1,19 +1,24 @@
 {
   "compilerOptions": {
     "module": "commonjs", // 编译生成的模块系统代码
-    "target": "es2017", // 指定ecmascript的目标版本
+    "target": "es5", // 指定ecmascript的目标版本
     "noImplicitAny": false, // 禁止隐式any类型
     "outDir": "dist",
     "sourceMap": false,
     "esModuleInterop": true,
+    "experimentalDecorators": true,
     "allowJs": true, // 是否允许出现js
     "newLine": "LF",
     "baseUrl": "./",
+    "jsx": "react",
+    "lib": [
+      "DOM"
+    ],
     "paths": {
-      "@server": ["server/*"],
-      "@utils": ["utils/*"],
-      "@config": ["config/*"],
+      "@server/*": ["server/*"],
+      "@utils/*": ["utils/*"],
+      "@config/*": ["config/*"],
     }
   },
-  "include": ["server/**/*"]
+  "include": ["server/**/*", "utils/**/*"]
 }

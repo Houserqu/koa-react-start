@@ -4,10 +4,10 @@ export default {
     userInfo: null,
   },
   reducers: {
-    add(count) {
+    add(count: number): number {
       return count + 1;
     },
-    minus(count) {
+    minus(count: number): number {
       return count - 1;
     },
   },

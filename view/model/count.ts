@@ -2,10 +2,10 @@ export default {
   namespace: 'count',
   state: 11,
   reducers: {
-    add(count) {
+    add(count: number): number {
       return count + 1;
     },
-    minus(count) {
+    minus(count: number): number {
       return count - 1;
     },
   },

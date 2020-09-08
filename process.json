@@ -1,15 +1,15 @@
 {
   "apps": [{
     "name": "koa-react-start",
-    "script": "./dist/server/server.js",
+    "script": "./dist/server.js",
     "env_production" : {
       "NODE_ENV": "production"
     },
     "min_uptime": "60s",
     "max_restarts": 30,
     "log_date_format": "YYYY-MM-DD HH:mm Z",
-    "error_file" : "./pm2-logs/api-err.log",
-    "out_file"   : "./pm2-logs/api-out.log",
+    "error_file" : "./pm2-logs/pm2-err.log",
+    "out_file"   : "./pm2-logs/pm2-out.log",
     "watch": false,
     "env": {
       "NODE_ENV": "production"

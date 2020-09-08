@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import 'typeface-roboto';
 import { renderRoutes } from 'react-router-config';
@@ -7,7 +6,7 @@ import { HashRouter } from 'react-router-dom';
 import dva from 'dva';
 import count from './model/count';
 
-const app = dva();
+const app: any = dva();
 app.model(count);
 
 const App = function () {
@@ -23,5 +22,4 @@ const App = function () {
 app.router(() => <App />);
 app.start('#root');
 
-// eslint-disable-next-line import/prefer-default-export
 export const store = app._store;
