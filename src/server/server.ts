@@ -18,5 +18,5 @@ app.use(router.routes()).use(router.allowedMethods());
 // 启动服务
 const port = 8010;
 app.listen(port, process.env.NODE_ENV === 'production' ? '' : '', () => {
-  console.log(`erver is running at port ${port}`);
+  console.log(`server is running at port ${port}`);
 });

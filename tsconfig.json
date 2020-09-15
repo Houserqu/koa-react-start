@@ -7,6 +7,7 @@
     "sourceMap": false,
     "esModuleInterop": true,
     "experimentalDecorators": true, // 装饰器功能
+    "emitDecoratorMetadata": true,
     "removeComments": true, // 删除注释
     "allowJs": true,        // 是否允许出现js
     "newLine": "LF",

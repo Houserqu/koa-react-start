@@ -1,8 +1,8 @@
 import Router from 'koa-router';
-import { app } from './controller/app';
+import app from './controller/app';
+import { useController } from './core/utils/router';
 const router = new Router();
 
-// 进行兑换
-router.get('/api/index', app);
+useController(router, [app])
 
 export default router;
