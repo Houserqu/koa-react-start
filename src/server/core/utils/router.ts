@@ -25,7 +25,7 @@ export function useController(router: Router, controllers: any[]): void {
 
       // 注册路由
       router[route.method](path.resolve('/', pathPre, route.path), async ctx => {
-        await instance[route.name](ctx);
+        ctx.body = await instance[route.name](ctx);
       });
     }
   }
