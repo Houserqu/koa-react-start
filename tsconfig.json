@@ -12,11 +12,7 @@
     "allowJs": true,        // 是否允许出现js
     "newLine": "LF",
     "baseUrl": "./",
-    "jsx": "react",
-    "paths": {
-      "@": ["src"],
-      "@/*": ["src/*"],
-    }
+    "jsx": "react"
   },
   "include": ["src/**/*"]
 }
