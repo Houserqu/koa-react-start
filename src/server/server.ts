@@ -1,8 +1,13 @@
+import { loadConfig } from '../utils/loadConfig';
+loadConfig()
+
 import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
 import statics from 'koa-static';
 import path from 'path';
 import router from './router';
+
+console.log(process.env.DB_HOST)
 
 const app = new Koa();
 app.use(bodyParser());
